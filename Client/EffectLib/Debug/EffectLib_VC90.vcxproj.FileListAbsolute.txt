@@ -1,0 +1,4 @@
+C:\Users\MentaL\Desktop\Ashens2\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Debug\EffectLib.lib
+C:\Users\MentaL\Desktop\Ashens2\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Debug\EffectLib.pdb
+C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Debug\EffectLib.lib
+C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Debug\EffectLib.pdb

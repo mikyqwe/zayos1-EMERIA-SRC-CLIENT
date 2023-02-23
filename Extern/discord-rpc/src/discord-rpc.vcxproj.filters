@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\discord_rpc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\rpc_connection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\serialization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\connection_win.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\discord_register_win.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\include\discord_rpc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\include\discord_register.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\rpc_connection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\serialization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\connection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\backoff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\msg_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8F20E384-5F1F-35CF-8058-E86DCE467146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{12D29E77-5EF4-380B-8F20-B86316E3E752}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

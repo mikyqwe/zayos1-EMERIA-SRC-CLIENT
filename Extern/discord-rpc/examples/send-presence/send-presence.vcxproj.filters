@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\examples\send-presence\send-presence.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Extern\discord-rpc\examples\send-presence\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{12D29E77-5EF4-380B-8F20-B86316E3E752}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

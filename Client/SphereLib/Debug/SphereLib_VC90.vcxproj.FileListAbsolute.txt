@@ -1,0 +1,4 @@
+C:\Users\MentaL\Desktop\Ashens2\Srcs_CLIENT_OFFICIAL\Srcs\Client\SphereLib\Debug\SphereLib.lib
+C:\Users\MentaL\Desktop\Ashens2\Srcs_CLIENT_OFFICIAL\Srcs\Client\SphereLib\Debug\SphereLib.pdb
+C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Client\SphereLib\Debug\SphereLib.lib
+C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Client\SphereLib\Debug\SphereLib.pdb

@@ -1,0 +1,4 @@
+C:\Users\MentaL\Desktop\Ashens2\Srcs_CLIENT_OFFICIAL\Srcs\Client\EterLib\Release\eterlib.lib
+C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL - Copia\Srcs\Client\EterLib\Release\eterlib.lib
+C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Client\EterLib\Release\eterlib.lib
+D:\Emeria\Srcs_CLIENT_OFFICIAL\Srcs\Client\EterLib\Release\eterlib.lib
