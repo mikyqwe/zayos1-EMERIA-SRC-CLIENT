@@ -1,3 +1,4 @@
+*.bin
 *.sdf
 *.lib
 *.ipch
