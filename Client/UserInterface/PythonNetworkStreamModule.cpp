@@ -811,6 +811,34 @@ PyObject* netSendItemDropPacketNew(PyObject* poSelf, PyObject* poArgs)
 	return Py_BuildNone();
 }
 
+#ifdef ENABLE_SELL_ITEM
+PyObject* netSendItemSellPacket(PyObject* poSelf, PyObject* poArgs)
+{
+	TItemPos Cell;
+
+	switch (PyTuple_Size(poArgs))
+	{
+	case 1:
+		if (!PyTuple_GetInteger(poArgs, 0, &Cell.cell))
+			return Py_BuildException();
+		break;
+	case 2:
+		if (!PyTuple_GetByte(poArgs, 0, &Cell.window_type))
+			return Py_BuildException();
+		if (!PyTuple_GetInteger(poArgs, 1, &Cell.cell))
+			return Py_BuildException();
+		break;
+	default:
+		return Py_BuildException();
+	}
+
+
+	CPythonNetworkStream& rkNetStream = CPythonNetworkStream::Instance();
+	rkNetStream.SendItemSellPacket(Cell, 0);
+	return Py_BuildNone();
+}
+#endif
+
 PyObject* netSendElkDropPacket(PyObject* poSelf, PyObject* poArgs)
 {
 	int iElk;
@@ -2527,6 +2555,10 @@ void initnet()
 		{ "SendPostAllDelete",						netSendPostAllDelete,						METH_VARARGS },
 		{ "SendPostAllGetItems",					netSendPostAllGetItems,						METH_VARARGS },
 		{ "RequestPostAddData",						netRequestPostAddData,						METH_VARARGS },
+#endif
+
+#ifdef ENABLE_SELL_ITEM
+		{ "SendItemSellPacket",					netSendItemSellPacket,					METH_VARARGS },
 #endif
 
 		// SYSTEM

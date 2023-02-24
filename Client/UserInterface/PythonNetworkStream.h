@@ -184,6 +184,9 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
 		bool SendItemDropPacketNew(TItemPos pos, DWORD elk, DWORD count);
 		bool SendItemMovePacket(TItemPos pos, TItemPos change_pos, BYTE num);
 		bool SendItemPickUpPacket(DWORD vid);
+#ifdef ENABLE_SELL_ITEM
+		bool SendItemSellPacket(TItemPos pos, DWORD elk);
+#endif
 #ifdef INGAME_WIKI
 		bool SendWikiRequestInfo(unsigned long long retID, DWORD vnum, bool isMob);
 		void ToggleWikiWindow();

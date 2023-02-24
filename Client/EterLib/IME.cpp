@@ -287,7 +287,8 @@ CIME::CIME()
 	m_bOnlyNumberMode = FALSE;
 	m_hOrgIMC = NULL;
 
-	m_bEnablePaste = false;
+	//m_bEnablePaste = false;
+	m_bEnablePaste = true;
 	m_bUseDefaultIME = false;
 }
 
@@ -884,8 +885,8 @@ void CIME::OnChar(wchar_t c)
 	if ((c >= 0x00 && c<=0x1f) || (c == 0x7f)) // @fixme011
 		return;
 
-	if (!__IsWritable(c))
-		return;
+	//if (!__IsWritable(c))
+		//return;
 
 	InsertString(&c, 1);
 }

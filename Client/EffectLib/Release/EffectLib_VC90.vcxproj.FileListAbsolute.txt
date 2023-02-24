@@ -2,3 +2,4 @@ C:\Users\MentaL\Desktop\Ashens2\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Relea
 C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL - Copia\Srcs\Client\EffectLib\Release\EffectLib.lib
 C:\Users\MentaL\Desktop\Zayos\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Release\EffectLib.lib
 D:\Emeria\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Release\EffectLib.lib
+C:\Users\seat exeo\Desktop\Emeria\Srcs_CLIENT_OFFICIAL\Srcs\Client\EffectLib\Release\EffectLib.lib

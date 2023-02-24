@@ -1814,6 +1814,12 @@ void initapp()
 	PyModule_AddIntConstant(poModule, "ENABLE_TWEENY_LIBRARY", 0);
 #endif
 
+#ifdef ENABLE_SELL_ITEM
+	PyModule_AddIntConstant(poModule, "ENABLE_SELL_ITEM", 1);
+#else
+	PyModule_AddIntConstant(poModule, "ENABLE_SELL_ITEM", 0);
+#endif
+
 #if defined(SKILL_COOLTIME_UPDATE)
 	PyModule_AddIntConstant(poModule, "SKILL_COOLTIME_UPDATE", true);
 #else

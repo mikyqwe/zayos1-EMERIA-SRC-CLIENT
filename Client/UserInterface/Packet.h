@@ -52,6 +52,9 @@ enum
 	ENVANTER_BLACK		            			= 23,
 #endif
 	HEADER_CG_ITEM_DROP2                        = 20,
+#ifdef ENABLE_SELL_ITEM
+	HEADER_CG_ITEM_SELL = 22,
+#endif
 	//HEADER_BLANK21								= 21,
 	//HEADER_BLANK22								= 22,
 	//HEADER_BLANK22								= 23,
@@ -966,6 +969,15 @@ typedef struct command_item_move
 	TItemPos change_pos;
 	BYTE num;
 } TPacketCGItemMove;
+
+#ifdef ENABLE_SELL_ITEM
+typedef struct command_item_sell
+{
+	BYTE        header;
+	TItemPos    pos;
+	DWORD		gold;
+} TPacketCGItemSell;
+#endif
 
 #ifdef ENABLE_SORT_INVEN
 typedef struct sort_inven
