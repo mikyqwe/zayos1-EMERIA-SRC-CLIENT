@@ -2239,6 +2239,12 @@ void initapp()
 	PyModule_AddIntConstant(poModule, "ENABLE_LVL115_ARMOR_EFFECT",	0);
 #endif
 
+#ifdef BYKATIL199_ITEM_SLOT_EFFECT
+	PyModule_AddIntConstant(poModule, "BYKATIL199_ITEM_SLOT_EFFECT", 1);
+#else
+	PyModule_AddIntConstant(poModule, "BYKATIL199_ITEM_SLOT_EFFECT", 0);
+#endif
+
 #ifdef TARGET_INFORMATION_SYSTEM
 	PyModule_AddIntConstant(poModule, "TARGET_INFORMATION_SYSTEM",	1);
 #else

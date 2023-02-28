@@ -1755,6 +1755,21 @@ void initchr()
 	PyModule_AddIntConstant(poModule, "AFFECT_AFK",							CInstanceBase::AFFECT_AFK);
 #endif
 
+#ifdef BYKATIL199_ITEM_SLOT_EFFECT
+	PyModule_AddIntConstant(poModule, "NEW_AFFECT_POTION_1", 600);
+	PyModule_AddIntConstant(poModule, "NEW_AFFECT_POTION_2", 601);
+	PyModule_AddIntConstant(poModule, "NEW_AFFECT_POTION_3", 602);
+	PyModule_AddIntConstant(poModule, "NEW_AFFECT_POTION_4", 603);
+	PyModule_AddIntConstant(poModule, "NEW_AFFECT_POTION_5", 604);
+	PyModule_AddIntConstant(poModule, "NEW_AFFECT_POTION_6", 605);
+	PyModule_AddIntConstant(poModule, "NEW_SEBNEM_POTION_1", 610);
+	PyModule_AddIntConstant(poModule, "NEW_SEBNEM_POTION_2", 611);
+	PyModule_AddIntConstant(poModule, "NEW_SEBNEM_POTION_3", 612);
+	PyModule_AddIntConstant(poModule, "NEW_SEBNEM_POTION_4", 613);
+	PyModule_AddIntConstant(poModule, "NEW_SEBNEM_POTION_5", 614);
+	PyModule_AddIntConstant(poModule, "NEW_SEBNEM_POTION_6", 615);
+#endif
+
 #if defined(ENABLE_SHIP_DEFENSE)
 	PyModule_AddIntConstant(poModule, "NEW_AFFECT_DEFENSEWAVE_LASER", CInstanceBase::NEW_AFFECT_DEFENSEWAVE_LASER);
 #endif
