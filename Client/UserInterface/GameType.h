@@ -348,9 +348,9 @@ enum EWindows
 #ifdef ENABLE_SWITCHBOT
 	SWITCHBOT,
 #endif
-#ifdef ENABLE_6_7_BONUS_NEW_SYSTEM
-	BONUS_NEW_67,
-#endif
+// #ifdef ENABLE_6_7_BONUS_NEW_SYSTEM
+	// BONUS_NEW_67,
+// #endif
 #ifdef FAST_EQUIP_WORLDARD
 	CHANGE_EQUIP,
 #endif

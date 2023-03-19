@@ -1,3 +1,6 @@
+*.map
+*.pch
+*.pdb
 *.db-shm
 *.db-wal
 *.opendb

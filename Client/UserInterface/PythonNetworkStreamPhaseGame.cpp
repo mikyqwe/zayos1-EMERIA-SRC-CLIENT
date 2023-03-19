@@ -6581,13 +6581,13 @@ bool CPythonNetworkStream::RecvChestDropInfo()
 static int64_t StartTime;
 //static constexpr auto DiscordClientID = "667352913621942276"; // C++14 or lastest required for constexpr
 auto szSiteName = "Emeria";
-auto szIconName = "zayos-logo2";
+auto szIconName = "disc_rpc_emeria_logo";
 void CPythonNetworkStream::Discord_Start()
 {
 	StartTime = time(0);
 	DiscordEventHandlers handlers;
 	memset(&handlers, 0, sizeof(handlers));
-	Discord_Initialize("842829361358962718", &handlers, 1, nullptr); // Set your application ID
+	Discord_Initialize("1085335287695159347", &handlers, 1, nullptr); // Set your application ID
 	Discord_Update(true, false, false);
 }
 void CPythonNetworkStream::Discord_Update(const bool login, const bool select, const bool loading)
