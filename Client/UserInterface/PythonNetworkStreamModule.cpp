@@ -896,7 +896,7 @@ PyObject* netSendItemMovePacket(PyObject* poSelf, PyObject* poArgs)
 	}
 
 	CPythonNetworkStream& rkNetStream=CPythonNetworkStream::Instance();
-	rkNetStream.SendItemMovePacket(Cell, ChangeCell, (BYTE) num);
+	rkNetStream.SendItemMovePacket(Cell, ChangeCell, (short) num);
 	return Py_BuildNone();
 }
 

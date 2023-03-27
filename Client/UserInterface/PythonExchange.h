@@ -25,7 +25,7 @@ class CPythonExchange : public CSingleton<CPythonExchange>
 #endif
 
 			DWORD					item_vnum[EXCHANGE_ITEM_MAX_NUM];
-			BYTE					item_count[EXCHANGE_ITEM_MAX_NUM];
+			short					item_count[EXCHANGE_ITEM_MAX_NUM];
 			DWORD					item_metin[EXCHANGE_ITEM_MAX_NUM][ITEM_SOCKET_SLOT_MAX_NUM];
 			TPlayerItemAttribute	item_attr[EXCHANGE_ITEM_MAX_NUM][ITEM_ATTRIBUTE_SLOT_MAX_NUM];
 
@@ -94,8 +94,8 @@ class CPythonExchange : public CSingleton<CPythonExchange>
 		DWORD	GetLevelFromTarget();
 #endif
 
-		void			SetItemToTarget(DWORD pos, DWORD vnum, BYTE count);
-		void			SetItemToSelf(DWORD pos, DWORD vnum, BYTE count);
+		void			SetItemToTarget(DWORD pos, DWORD vnum, short count);
+		void			SetItemToSelf(DWORD pos, DWORD vnum, short count);
 
 		void			SetItemMetinSocketToTarget(int pos, int imetinpos, DWORD vnum);
 		void			SetItemMetinSocketToSelf(int pos, int imetinpos, DWORD vnum);
@@ -114,8 +114,8 @@ class CPythonExchange : public CSingleton<CPythonExchange>
 		DWORD			GetItemVnumFromTarget(BYTE pos);
 		DWORD			GetItemVnumFromSelf(BYTE pos);
 
-		BYTE			GetItemCountFromTarget(BYTE pos);
-		BYTE			GetItemCountFromSelf(BYTE pos);
+		short			GetItemCountFromTarget(BYTE pos);
+		short			GetItemCountFromSelf(BYTE pos);
 
 		DWORD			GetItemMetinSocketFromTarget(BYTE pos, int iMetinSocketPos);
 		DWORD			GetItemMetinSocketFromSelf(BYTE pos, int iMetinSocketPos);

@@ -14,7 +14,7 @@ bool PyTuple_GetFloat(PyObject* poArgs, int pos, float* ret);
 bool PyTuple_GetDouble(PyObject* poArgs, int pos, double* ret);
 bool PyTuple_GetObject(PyObject* poArgs, int pos, PyObject** ret);
 bool PyTuple_GetBoolean(PyObject* poArgs, int pos, bool* ret);
-
+bool PyTuple_GetInteger(PyObject* poArgs, int pos, short* ret);
 bool PyCallClassMemberFunc(PyObject* poClass, const char* c_szFunc, PyObject* poArgs);
 bool PyCallClassMemberFunc(PyObject* poClass, const char* c_szFunc, PyObject* poArgs, bool* pisRet);
 bool PyCallClassMemberFunc(PyObject* poClass, const char* c_szFunc, PyObject* poArgs, long * plRetValue);

@@ -365,7 +365,7 @@ class CPythonPlayer: public CSingleton<CPythonPlayer>, public IAbstractPlayer
 		void	MoveItemData(TItemPos SrcCell, TItemPos DstCell);
 		void	SetItemData(TItemPos Cell, const TItemData & c_rkItemInst);
 		const TItemData * GetItemData(TItemPos Cell) const;
-		void	SetItemCount(TItemPos Cell, BYTE byCount);
+		void	SetItemCount(TItemPos Cell, short byCount);
 		void	SetItemMetinSocket(TItemPos Cell, DWORD dwMetinSocketIndex, DWORD dwMetinNumber);
 #ifdef ENABLE_CHANGELOOK_SYSTEM
 		void	SetItemTransmutation(TItemPos itemPos, DWORD dwVnum);

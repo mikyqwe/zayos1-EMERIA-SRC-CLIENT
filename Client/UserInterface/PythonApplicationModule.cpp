@@ -1992,6 +1992,12 @@ void initapp()
 	PyModule_AddIntConstant(poModule, "ENABLE_NEW_EQUIPMENT_SYSTEM",	0);
 #endif
 
+#ifdef ENABLE_AFFECT_FIX
+	PyModule_AddIntConstant(poModule, "ENABLE_AFFECT_FIX", 1);
+#else
+	PyModule_AddIntConstant(poModule, "ENABLE_AFFECT_FIX", 0);
+#endif
+
 #if defined(__BL_MAILBOX__)
 	PyModule_AddIntConstant(poModule, "BL_MAILBOX", true);
 #else

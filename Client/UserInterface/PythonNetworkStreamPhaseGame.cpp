@@ -136,6 +136,13 @@ void CPythonNetworkStream::__RefreshEquipmentWindow()
 	m_isRefreshEquipmentWnd=true;
 }
 
+#ifdef ENABLE_AFFECT_FIX
+void CPythonNetworkStream::__RefreshAffectWindow()
+{
+	m_isRefreshAffectWindow = true;
+}
+#endif
+
 #ifdef ENABLE_PRIVATESHOP_SEARCH_SYSTEM
 void CPythonNetworkStream::__RefreshShopSearchWindow()
 {
@@ -1040,6 +1047,14 @@ void CPythonNetworkStream::GamePhase()
 		PyCallClassMemberFunc(m_apoPhaseWnd[PHASE_WINDOW_GAME], "RefreshGuildGradePage", Py_BuildValue("()"));
 		s_nextRefreshTime = curTime + 300;
 	}
+#ifdef ENABLE_AFFECT_FIX
+	if (m_isRefreshAffectWindow)
+	{
+		m_isRefreshAffectWindow = false;
+		PyCallClassMemberFunc(m_apoPhaseWnd[PHASE_WINDOW_GAME], "RefreshAffectWindow", Py_BuildValue("()"));
+		s_nextRefreshTime = curTime + 300;
+	}
+#endif
 #ifdef ENABLE_PRIVATESHOP_SEARCH_SYSTEM
 	if (m_isRefreshShopSearchWnd)
 	{
@@ -1069,7 +1084,9 @@ void CPythonNetworkStream::__InitializeGamePhase()
 	m_isRefreshGuildWndMemberPageGradeComboBox=false;
 	m_isRefreshGuildWndSkillPage=false;
 	m_isRefreshGuildWndGradePage=false;
-
+#ifdef ENABLE_AFFECT_FIX
+	m_isRefreshAffectWindow = false;
+#endif
 	m_EmoticonStringVector.clear();
 
 	m_pInstTarget = NULL;
@@ -2546,7 +2563,7 @@ bool CPythonNetworkStream::RecvExchangePacket()
 			if (exchange_packet.is_me)
 			{
 				int iSlotIndex = exchange_packet.arg2.cell;
-				CPythonExchange::Instance().SetItemToSelf(iSlotIndex, exchange_packet.arg1, (BYTE) exchange_packet.arg3);
+				CPythonExchange::Instance().SetItemToSelf(iSlotIndex, exchange_packet.arg1, (short) exchange_packet.arg3);
 				for (int i = 0; i < ITEM_SOCKET_SLOT_MAX_NUM; ++i)
 					CPythonExchange::Instance().SetItemMetinSocketToSelf(iSlotIndex, i, exchange_packet.alValues[i]);
 				for (int j = 0; j < ITEM_ATTRIBUTE_SLOT_MAX_NUM; ++j)
@@ -2569,7 +2586,7 @@ bool CPythonNetworkStream::RecvExchangePacket()
 			else
 			{
 				int iSlotIndex = exchange_packet.arg2.cell;
-				CPythonExchange::Instance().SetItemToTarget(iSlotIndex, exchange_packet.arg1, (BYTE) exchange_packet.arg3);
+				CPythonExchange::Instance().SetItemToTarget(iSlotIndex, exchange_packet.arg1, (short) exchange_packet.arg3);
 				for (int i = 0; i < ITEM_SOCKET_SLOT_MAX_NUM; ++i)
 					CPythonExchange::Instance().SetItemMetinSocketToTarget(iSlotIndex, i, exchange_packet.alValues[i]);
 				for (int j = 0; j < ITEM_ATTRIBUTE_SLOT_MAX_NUM; ++j)
@@ -2590,11 +2607,11 @@ bool CPythonNetworkStream::RecvExchangePacket()
 		case EXCHANGE_SUBHEADER_GC_ITEM_DEL:
 			if (exchange_packet.is_me)
 			{
-				CPythonExchange::Instance().DelItemOfSelf((BYTE) exchange_packet.arg1);
+				CPythonExchange::Instance().DelItemOfSelf((short) exchange_packet.arg1);
 			}
 			else
 			{
-				CPythonExchange::Instance().DelItemOfTarget((BYTE) exchange_packet.arg1);
+				CPythonExchange::Instance().DelItemOfTarget((short) exchange_packet.arg1);
 			}
 			__RefreshExchangeWindow();
 			__RefreshInventoryWindow();
@@ -5663,6 +5680,9 @@ bool CPythonNetworkStream::RecvAffectAddPacket()
 		_CrtDbgBreak();
 
 	PyCallClassMemberFunc(m_apoPhaseWnd[PHASE_WINDOW_GAME], "BINARY_NEW_AddAffect", Py_BuildValue("(iiii)", rkElement.dwType, rkElement.bPointIdxApplyOn, rkElement.lApplyValue, rkElement.lDuration));
+#ifdef ENABLE_AFFECT_FIX
+	__RefreshAffectWindow();
+#endif
 	return true;
 }
 
@@ -5673,6 +5693,9 @@ bool CPythonNetworkStream::RecvAffectRemovePacket()
 		return false;
 
 	PyCallClassMemberFunc(m_apoPhaseWnd[PHASE_WINDOW_GAME], "BINARY_NEW_RemoveAffect", Py_BuildValue("(ii)", kAffectRemove.dwType, kAffectRemove.bApplyOn));
+#ifdef ENABLE_AFFECT_FIX
+	__RefreshAffectWindow();
+#endif
 	return true;
 }
 

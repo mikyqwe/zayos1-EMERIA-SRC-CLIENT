@@ -182,7 +182,7 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
 		bool Envanter_paketi(/*TItemPos pos*/);
 #endif
 		bool SendItemDropPacketNew(TItemPos pos, DWORD elk, DWORD count);
-		bool SendItemMovePacket(TItemPos pos, TItemPos change_pos, BYTE num);
+		bool SendItemMovePacket(TItemPos pos, TItemPos change_pos, short num);
 		bool SendItemPickUpPacket(DWORD vid);
 #ifdef ENABLE_SELL_ITEM
 		bool SendItemSellPacket(TItemPos pos, DWORD elk);
@@ -207,7 +207,7 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
 		bool SendShopBuyPacket(BYTE byCount);
 		bool SendShopSellPacket(BYTE bySlot);
 #ifdef ENABLE_SPECIAL_STORAGE_SYSTEM
-		bool SendShopSellPacketNew(BYTE bySlot, BYTE byCount, BYTE byType);
+		bool SendShopSellPacketNew(BYTE bySlot, short byCount, BYTE byType);
 #else
 		bool SendShopSellPacketNew(BYTE bySlot, BYTE byCount);
 #endif
@@ -276,7 +276,7 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
 		bool SendSafeBoxMoneyPacket(BYTE byState, DWORD dwMoney);
 		bool SendSafeBoxCheckinPacket(TItemPos InventoryPos, BYTE bySafeBoxPos);
 		bool SendSafeBoxCheckoutPacket(BYTE bySafeBoxPos, TItemPos InventoryPos);
-		bool SendSafeBoxItemMovePacket(BYTE bySourcePos, BYTE byTargetPos, BYTE byCount);
+		bool SendSafeBoxItemMovePacket(BYTE bySourcePos, BYTE byTargetPos, short byCount);
 
 		// Mall
 		bool SendMallCheckoutPacket(BYTE byMallPos, TItemPos InventoryPos);
@@ -528,6 +528,9 @@ class CPythonNetworkStream : public CNetworkStream, public CSingleton<CPythonNet
 		void __RefreshTargetBoardByName(const char * c_szName);
 		void __RefreshTargetBoard();
 		void __RefreshMallWindow();
+#ifdef ENABLE_AFFECT_FIX
+		void __RefreshAffectWindow();
+#endif
 #ifdef ENABLE_PRIVATESHOP_SEARCH_SYSTEM
 		void __RefreshShopSearchWindow();
 #endif
@@ -903,6 +906,9 @@ protected:
 		bool m_isRefreshGuildWndMemberPageGradeComboBox;
 		bool m_isRefreshGuildWndSkillPage;
 		bool m_isRefreshGuildWndGradePage;
+#ifdef ENABLE_AFFECT_FIX
+		bool m_isRefreshAffectWindow;
+#endif
 #ifdef ENABLE_PRIVATESHOP_SEARCH_SYSTEM
 		bool m_isRefreshShopSearchWnd;
 #endif

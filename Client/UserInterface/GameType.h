@@ -598,7 +598,7 @@ typedef struct TPlayerItemAttribute
 typedef struct packet_item
 {
 	DWORD       vnum;
-	BYTE        count;
+	short        count;
 #ifdef ENABLE_CHANGELOOK_SYSTEM
 	DWORD	transmutation;
 #endif
@@ -631,7 +631,7 @@ typedef struct packet_shop_item
 	DWORD		price;
 #endif
 
-	BYTE        count;
+	short        count;
 #ifdef ENABLE_MULTISHOP
 	DWORD		wPriceVnum;
 	DWORD		wPrice;

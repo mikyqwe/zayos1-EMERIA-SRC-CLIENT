@@ -402,6 +402,14 @@ bool __PyCallClassMemberFunc_ByPyString(PyObject* poClass, PyObject* poFuncName,
 	return true;
 }
 
+bool PyTuple_GetInteger(PyObject* poArgs, int pos, short* ret)
+{
+	int val;
+	bool result = PyTuple_GetInteger(poArgs, pos, &val);
+	*ret = short(val);
+	return result;
+}
+
 bool __PyCallClassMemberFunc(PyObject* poClass, PyObject * poFunc, PyObject* poArgs, PyObject** ppoRet)
 {
 	if (!poClass)

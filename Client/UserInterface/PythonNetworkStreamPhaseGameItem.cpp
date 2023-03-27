@@ -69,7 +69,7 @@ bool CPythonNetworkStream::SendSafeBoxCheckoutPacket(BYTE bySafeBoxPos, TItemPos
 	return SendSequence();
 }
 
-bool CPythonNetworkStream::SendSafeBoxItemMovePacket(BYTE bySourcePos, BYTE byTargetPos, BYTE byCount)
+bool CPythonNetworkStream::SendSafeBoxItemMovePacket(BYTE bySourcePos, BYTE byTargetPos, short byCount)
 {
 	__PlaySafeBoxItemDropSound(bySourcePos);
 
@@ -516,7 +516,7 @@ bool CPythonNetworkStream::SendShopSellPacket(BYTE bySlot)
 }
 
 #ifdef ENABLE_SPECIAL_STORAGE_SYSTEM
-bool CPythonNetworkStream::SendShopSellPacketNew(BYTE bySlot, BYTE byCount, BYTE byType)
+bool CPythonNetworkStream::SendShopSellPacketNew(BYTE bySlot, short byCount, BYTE byType)
 #else
 bool CPythonNetworkStream::SendShopSellPacketNew(BYTE bySlot, BYTE byCount)
 #endif
@@ -538,7 +538,7 @@ bool CPythonNetworkStream::SendShopSellPacketNew(BYTE bySlot, BYTE byCount)
 		Tracef("SendShopAddSellPacket Error\n");
 		return false;
 	}
-	if (!Send(sizeof(BYTE), &byCount))
+	if (!Send(sizeof(short), &byCount))
 	{
 		Tracef("SendShopAddSellPacket Error\n");
 		return false;
@@ -879,7 +879,7 @@ void CPythonNetworkStream::__PlayMallItemDropSound(UINT uSlotPos)
 	rkItem.PlayDropSound(dwItemID);
 }
 
-bool CPythonNetworkStream::SendItemMovePacket(TItemPos pos, TItemPos change_pos, BYTE num)
+bool CPythonNetworkStream::SendItemMovePacket(TItemPos pos, TItemPos change_pos, short num)
 {
 	if (!__CanActMainInstance())
 		return true;

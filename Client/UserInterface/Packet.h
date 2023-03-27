@@ -959,7 +959,7 @@ typedef struct command_item_drop2
     BYTE        header;
     TItemPos pos;
     DWORD       gold;
-    BYTE        count;
+    short        count;
 } TPacketCGItemDrop2;
 
 typedef struct command_item_move
@@ -967,7 +967,7 @@ typedef struct command_item_move
 	BYTE header;
 	TItemPos pos;
 	TItemPos change_pos;
-	BYTE num;
+	short num;
 } TPacketCGItemMove;
 
 #ifdef ENABLE_SELL_ITEM
@@ -1144,7 +1144,7 @@ enum
 typedef struct command_shop
 {
 	BYTE        header;
-	BYTE		subheader;
+	short		subheader;
 } TPacketCGShop;
 
 enum
@@ -1499,7 +1499,7 @@ typedef struct command_give_item
 	BYTE byHeader;
 	DWORD dwTargetVID;
 	TItemPos ItemPos;
-	BYTE byItemCount;
+	short byItemCount;
 } TPacketCGGiveItem;
 
 typedef struct SPacketCGHack
@@ -1535,7 +1535,7 @@ typedef struct SPacketCGMyShop
 {
     BYTE        bHeader;
     char        szSign[SHOP_SIGN_MAX_LEN + 1];
-    BYTE        bCount;	// count of TShopItemTable, max 39
+    short        bCount;	// count of TShopItemTable, max 39
 } TPacketCGMyShop;
 
 #ifdef ENABLE_OFFLINE_SHOP_SYSTEM
@@ -2455,7 +2455,7 @@ typedef struct packet_set_item
 	BYTE		header;
 	TItemPos	Cell;
 	DWORD		vnum;
-	BYTE		count;
+	short		count;
 #ifdef ENABLE_CHANGELOOK_SYSTEM
 	DWORD	transmutation;
 #endif
@@ -2468,7 +2468,7 @@ typedef struct packet_set_item2
 	BYTE		header;
 	TItemPos	Cell;
 	DWORD		vnum;
-	BYTE		count;
+	short		count;
 #ifdef ENABLE_CHANGELOOK_SYSTEM
 	DWORD		transmutation;
 #endif
@@ -2575,7 +2575,7 @@ typedef struct packet_update_item
 {
 	BYTE		header;
 	TItemPos	Cell;
-	BYTE		count;
+	short		count;
 #ifdef ENABLE_CHANGELOOK_SYSTEM
 	DWORD	transmutation;
 #endif
@@ -3248,7 +3248,7 @@ typedef struct SRefineTable
 {
     DWORD src_vnum;
     DWORD result_vnum;
-    BYTE material_count;
+    short material_count;
     int cost; // �ҿ� ���?
     int prob; // Ȯ��
     TMaterial materials[REFINE_MATERIAL_MAX_NUM];
@@ -3426,7 +3426,7 @@ typedef struct packet_channel
 typedef struct SEquipmentItemSet
 {
 	DWORD   vnum;
-	BYTE    count;
+	short    count;
 	long    alSockets[ITEM_SOCKET_SLOT_MAX_NUM];
 	TPlayerItemAttribute aAttr[ITEM_ATTRIBUTE_SLOT_MAX_NUM];
 } TEquipmentItemSet;

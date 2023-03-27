@@ -30,7 +30,7 @@ class IAbstractPlayer : public TAbstractSingleton<IAbstractPlayer>
 		virtual bool	IsSamePartyMember(DWORD dwVID1, DWORD dwVID2) = 0;
 
 		virtual void	SetItemData(TItemPos itemPos, const TItemData & c_rkItemInst) = 0;
-		virtual void	SetItemCount(TItemPos itemPos, BYTE byCount) = 0;
+		virtual void	SetItemCount(TItemPos itemPos, short byCount) = 0;
 #ifdef ENABLE_CHANGELOOK_SYSTEM
 		virtual void	SetItemTransmutation(TItemPos itemPos, DWORD dwVnum) = 0;
 		virtual DWORD	GetItemTransmutation(TItemPos itemPos) = 0;

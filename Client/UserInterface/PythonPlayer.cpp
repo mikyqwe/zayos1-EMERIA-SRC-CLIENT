@@ -846,7 +846,7 @@ DWORD CPythonPlayer::GetItemTransmutation(TItemPos Cell)
 }
 #endif
 
-void CPythonPlayer::SetItemCount(TItemPos Cell, BYTE byCount)
+void CPythonPlayer::SetItemCount(TItemPos Cell, short byCount)
 {
 	if (!Cell.IsValidCell())
 		return;
